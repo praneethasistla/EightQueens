@@ -26,4 +26,5 @@ public class Queen {
 	public Position getP() {
 		return p;
 	}
+
 }

@@ -12,7 +12,11 @@ public class Position {
 		vertical = v;
 	}
 	
-	public String getPosition(){
-		return horizontal + vertical;
+	public String getHorizontal(){
+		return horizontal;
+	}
+	
+	public String getVertical(){
+		return vertical;
 	}
 }
