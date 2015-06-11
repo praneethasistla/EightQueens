@@ -22,7 +22,6 @@ public class Queen {
 	public void setState(Boolean state1){
 		state = state1;
 	}
-
 	
 	public void setP(int h, int v) {
 		p.setPosition(h, v);
@@ -33,9 +32,20 @@ public class Queen {
 	}
 	
 	public boolean isConflict(Queen q){
+		int qHorValue = q.getP().getHorValue();
+		int qVerValue = q.getP().getVervalue();
+		int thisHorValue = this.getP().getHorValue();
+		int thisVerValue = this.getP().getVervalue();
+		
 		if ((q.getP().getHorizontal().equals(getP().getHorizontal())) ||
-				(q.getP().getVertical().equals(getP().getVertical())))
-				return true;
+				(q.getP().getVertical().equals(getP().getVertical()))) 
+			return true;
+		else if(((qHorValue+1 == thisHorValue) && (qVerValue+1 == thisVerValue))||
+					((qHorValue-1 == thisHorValue) && (qVerValue-1 == thisVerValue)) ||
+					((qHorValue+1 == thisHorValue) && (qVerValue-1 == thisVerValue)) ||
+					((qHorValue-1 == thisHorValue) && (qVerValue+1 == thisVerValue)))
+			return true;
+		
 		return false;
 	}
 

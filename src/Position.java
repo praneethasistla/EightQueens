@@ -2,6 +2,9 @@
 public class Position {
 	private String horizontal;
 	private String vertical;
+	private int horValue;
+	private int verValue;
+	
 	public Position(){
 		horizontal = "a";
 		vertical = "8";
@@ -17,6 +20,16 @@ public class Position {
 	
 	public String getVertical(){
 		return vertical;
+	}
+	
+	public int getHorValue(){
+		 BoxValueInt();
+		 return horValue;
+	}
+	
+	public int getVervalue(){
+		BoxValueInt();
+		return verValue;
 	}
 	
 	public void setPosition(int h, int v) {
@@ -53,4 +66,41 @@ public class Position {
 			break;
 		}
 	}
+	
+	public void BoxValueInt(){
+		if (horizontal.equals("a"))
+			horValue = 0;
+		else if (horizontal.equals("b"))
+			horValue = 1;
+		else if (horizontal.equals("c"))
+			horValue = 2;
+		else if (horizontal.equals("d"))
+			horValue = 3;
+		else if (horizontal.equals("e"))
+			horValue = 4;
+		else if (horizontal.equals("f"))
+			horValue = 5;
+		else if (horizontal.equals("g"))
+			horValue = 6;
+		else if (horizontal.equals("h"))
+			horValue = 7;
+		
+		if (vertical.equals("1"))
+			verValue = 0;
+		else if (vertical.equals("2"))
+			verValue = 1;
+		else if (vertical.equals("3"))
+			verValue = 2;
+		else if (vertical.equals("4"))
+			verValue = 3;
+		else if (vertical.equals("5"))
+			verValue = 4;
+		else if (vertical.equals("6"))
+			verValue = 5;
+		else if (vertical.equals("7"))
+			verValue = 6;
+		else if (vertical.equals("8"))
+			verValue = 7;
+	}
+	
 }

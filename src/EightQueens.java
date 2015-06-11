@@ -26,7 +26,6 @@ public class EightQueens {
 				}
 			}
 		}
-		
 		System.out.println("q1 position: " + q1.getP().getHorizontal() + q1.getP().getVertical());
 		System.out.println("q2 position: " + q2.getP().getHorizontal() + q2.getP().getVertical());
 	}
