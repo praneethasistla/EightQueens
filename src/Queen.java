@@ -1,4 +1,3 @@
-
 public class Queen {
 	private boolean state;
 	private Position p = new Position();
@@ -31,22 +30,28 @@ public class Queen {
 		return p;
 	}
 	
+	public void printQueen(){
+		System.out.println("q1 position: " + getP().getHorizontal() + getP().getVertical());
+	}
+
 	public boolean isConflict(Queen q){
 		int qHorValue = q.getP().getHorValue();
 		int qVerValue = q.getP().getVervalue();
 		int thisHorValue = this.getP().getHorValue();
 		int thisVerValue = this.getP().getVervalue();
+		boolean conflict = false;
 		
-		if ((q.getP().getHorizontal().equals(getP().getHorizontal())) ||
-				(q.getP().getVertical().equals(getP().getVertical()))) 
-			return true;
-		else if(((qHorValue+1 == thisHorValue) && (qVerValue+1 == thisVerValue))||
-					((qHorValue-1 == thisHorValue) && (qVerValue-1 == thisVerValue)) ||
-					((qHorValue+1 == thisHorValue) && (qVerValue-1 == thisVerValue)) ||
-					((qHorValue-1 == thisHorValue) && (qVerValue+1 == thisVerValue)))
-			return true;
-		
-		return false;
+		if ((q.getP().getHorizontal().equals(this.getP().getHorizontal())) ||
+				(q.getP().getVertical().equals(this.getP().getVertical()))) 
+			conflict = true;
+		for (int i=0; i<7; i++){
+			if(((qHorValue+i == thisHorValue) && (qVerValue+i == thisVerValue))||
+						((qHorValue-i == thisHorValue) && (qVerValue-i == thisVerValue)) ||
+						((qHorValue+i == thisHorValue) && (qVerValue-i == thisVerValue)) ||
+						((qHorValue-i == thisHorValue) && (qVerValue+i == thisVerValue)))
+				conflict = true;
+		}
+		return conflict;
 	}
 
 }
