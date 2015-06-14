@@ -85,22 +85,7 @@ public class Position {
 		else if (horizontal.equals("h"))
 			horValue = 7;
 		
-		if (vertical.equals("1"))
-			verValue = 0;
-		else if (vertical.equals("2"))
-			verValue = 1;
-		else if (vertical.equals("3"))
-			verValue = 2;
-		else if (vertical.equals("4"))
-			verValue = 3;
-		else if (vertical.equals("5"))
-			verValue = 4;
-		else if (vertical.equals("6"))
-			verValue = 5;
-		else if (vertical.equals("7"))
-			verValue = 6;
-		else if (vertical.equals("8"))
-			verValue = 7;
+		verValue = Integer.parseInt(vertical)-1;
 	}
 	
 }
